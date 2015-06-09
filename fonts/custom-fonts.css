@@ -1,0 +1,51 @@
+/*@import url("Montserrat/Montserrat.css");
+@import url("Proxima Nova/Proxima Nova.css");
+@import url("Soho Pro/Soho Pro.css");*/
+/*@import url("soho-gothic-pro/soho-gothic-pro.css");*/
+
+@font-face {
+  font-family: 'SohoGothicPro';
+  src: url('soho-gothic-pro/SohoGothicPro-Light.eot');
+  src: url('soho-gothic-pro/SohoGothicPro-Light.eot?#iefix') format('embedded-opentype'),
+       url('soho-gothic-pro/SohoGothicPro-Light.woff2') format('woff2'),
+       url('soho-gothic-pro/SohoGothicPro-Light.woff') format('woff'),
+       url('soho-gothic-pro/SohoGothicPro-Light.ttf') format('truetype'),
+       url('soho-gothic-pro/SohoGothicPro-Light.svg#SohoGothicPro-Light') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SohoGothicPro';
+  src: url('soho-gothic-pro/SohoGothicPro-Regular.eot');
+  src: url('soho-gothic-pro/SohoGothicPro-Regular.eot?#iefix') format('embedded-opentype'),
+       url('soho-gothic-pro/SohoGothicPro-Regular.woff2') format('woff2'),
+       url('soho-gothic-pro/SohoGothicPro-Regular.woff') format('woff'),
+       url('soho-gothic-pro/SohoGothicPro-Regular.ttf') format('truetype'),
+       url('soho-gothic-pro/SohoGothicPro-Regular.svg#SohoGothicPro-Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SohoGothicPro-Medium';
+  src: url('soho-gothic-pro/SohoGothicPro-Medium.eot');
+  src: url('soho-gothic-pro/SohoGothicPro-Medium.eot?#iefix') format('embedded-opentype'),
+       url('soho-gothic-pro/SohoGothicPro-Medium.woff2') format('woff2'),
+       url('soho-gothic-pro/SohoGothicPro-Medium.woff') format('woff'),
+       url('soho-gothic-pro/SohoGothicPro-Medium.ttf') format('truetype'),
+       url('soho-gothic-pro/SohoGothicPro-Medium.svg#SohoGothicPro-Medium') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('proxima-nova/ProximaNova-Regular.eot');
+  src: url('proxima-nova/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+       url('proxima-nova/ProximaNova-Regular.woff2') format('woff2'),
+       url('proxima-nova/ProximaNova-Regular.woff') format('woff'),
+       url('proxima-nova/ProximaNova-Regular.ttf') format('truetype'),
+       url('proxima-nova/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
