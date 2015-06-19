@@ -49,3 +49,14 @@
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('proxima-nova/ProximaNova-Semibold.eot');
+  src: url('proxima-nova/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
+       url('proxima-nova/ProximaNova-Semibold.woff2') format('woff2'),
+       url('proxima-nova/ProximaNova-Semibold.woff') format('woff'),
+       url('proxima-nova/ProximaNova-Semibold.ttf') format('truetype'),
+       url('proxima-nova/ProximaNova-Semibold.svg#ProximaNova-Semibold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
