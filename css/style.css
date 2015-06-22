@@ -17,6 +17,12 @@ body {
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.525; }
+  @media (min-width: 320px) {
+    body {
+      background: #fff; } }
+  @media (min-width: 1200px) {
+    body {
+      background: #f6f6f6 url(../img/home/line-vertical.png) repeat-y center center; } }
 
 .h1, .h2, .h3, h1, h2, h3 {
   margin-bottom: 1rem; }
@@ -59,12 +65,6 @@ body {
 
 .mt15 {
   margin-top: 15px; }
-
-* {
-  -webkit-transition: All .3s ease;
-  -moz-transition: All .3s ease;
-  -o-transition: All .3s ease;
-  -ms-transition: All .3s ease; }
 
 a {
   color: #f8971c;
@@ -216,6 +216,24 @@ a {
   margin-left: auto;
   margin-right: auto; }
 
+.homepage-mobile p {
+  font-size: 2rem; }
+@media (min-width: 320px) {
+  .homepage-mobile .container {
+    width: 320px; } }
+@media (min-width: 480px) {
+  .homepage-mobile .container {
+    width: 480px; } }
+@media (min-width: 768px) {
+  .homepage-mobile .container {
+    width: 750px; } }
+@media (min-width: 992px) {
+  .homepage-mobile .container {
+    width: 970px; } }
+@media (min-width: 1200px) {
+  .homepage-mobile .container {
+    width: 1170px; } }
+
 .home-slide {
   background: #fff; }
   .home-slide .img-holder {
@@ -248,14 +266,15 @@ a {
         position: relative;
         bottom: 0;
         margin-bottom: 0px; } }
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       .home-slide .carousel-caption {
         right: 30%;
         left: 30%;
         padding-left: 20px;
         padding-right: 20px;
         bottom: 35%;
-        margin-bottom: -100px; } }
+        margin-bottom: -100px;
+        position: absolute; } }
     .home-slide .carousel-caption h3 {
       margin-top: 0;
       font-family: 'SohoGothicPro-Medium';
@@ -268,7 +287,10 @@ a {
           margin-top: 2rem; } }
     .home-slide .carousel-caption p {
       font-size: 2rem; }
-  @media (min-width: 768px) {
+  @media (min-width: 320px) {
+    .home-slide .carousel-indicators {
+      bottom: 38%; } }
+  @media (min-width: 992px) {
     .home-slide .carousel-indicators {
       bottom: 10px; } }
   .home-slide .carousel-indicators li {
@@ -290,8 +312,11 @@ a {
   position: relative; }
   @media (min-width: 320px) {
     .intro-butler {
-      padding: 7rem 0; } }
+      padding: 4rem 0; } }
   @media (min-width: 768px) {
+    .intro-butler {
+      padding: 7rem 0; } }
+  @media (min-width: 1200px) {
     .intro-butler {
       padding: 17rem 0; } }
   .intro-butler h1 {
@@ -303,14 +328,15 @@ a {
     @media (min-width: 320px) {
       .intro-butler h1 {
         font-size: 5rem; } }
-    @media (min-width: 768px) {
+    @media (min-width: 1200px) {
       .intro-butler h1 {
         font-size: 7rem; } }
   .intro-butler p {
     font-size: 2rem;
     margin-bottom: 1rem; }
   .intro-butler img {
-    margin-top: 2rem; }
+    margin-top: 2rem;
+    margin-bottom: 2rem; }
   .intro-butler .scroll {
     position: absolute;
     left: 50%;
@@ -319,32 +345,42 @@ a {
     animation-duration: 3s;
     animation-delay: 1s; }
 
-.door {
+@media (min-width: 320px) {
+  .door {
+    background: #fff; } }
+@media (min-width: 1200px) {
+  .door {
+    background: #f6f6f6; } }
+.door .door-holders {
+  background: white;
+  position: relative; }
+.door img.img-door {
+  left: -10px;
+  position: relative;
+  z-index: 2; }
+.door .door-holder {
   background: #f6f6f6; }
-  .door .door-holders {
-    background: white;
-    position: relative; }
-  .door img.img-door {
-    left: -10px;
-    position: relative;
-    z-index: 2; }
-  .door .door-holder {
-    background: #f6f6f6; }
-  .door img.img-computer {
-    position: absolute;
-    bottom: -35%;
-    left: 50%;
-    margin-left: 244px;
-    z-index: 3; }
-  .door img.bulter {
-    position: fixed;
-    left: 50%;
-    top: 469px;
-    margin-left: -63px;
-    z-index: 1; }
+.door img.img-computer {
+  position: absolute;
+  bottom: -35%;
+  left: 50%;
+  margin-left: 244px;
+  z-index: 3; }
+.door img.bulter {
+  position: fixed;
+  left: 50%;
+  top: 469px;
+  margin-left: -63px;
+  z-index: 1; }
 
 .walking {
   padding: 30rem 0 20rem; }
+  @media (min-width: 320px) {
+    .walking {
+      padding: 7rem 0; } }
+  @media (min-width: 1200px) {
+    .walking {
+      padding: 30rem 0 20rem; } }
   .walking .img-walking {
     position: relative; }
   .walking .img-walking-pof {
@@ -353,6 +389,12 @@ a {
     left: 146px; }
   .walking .infos {
     padding-top: 25rem; }
+    @media (min-width: 320px) {
+      .walking .infos {
+        padding-top: 0rem; } }
+    @media (min-width: 1200px) {
+      .walking .infos {
+        padding-top: 25rem; } }
   .walking .hero-holder {
     z-index: 2; }
   .walking .bulter {
@@ -386,9 +428,19 @@ a {
     left: 868px; }
   .walking .infos-holder {
     position: relative; }
+  .walking .img-mobile {
+    margin-top: 4rem; }
 
 .picking {
   padding: 20rem 0 20rem; }
+  @media (min-width: 320px) {
+    .picking {
+      padding: 7rem 0 0 0;
+      background: #f1f1f2; } }
+  @media (min-width: 1200px) {
+    .picking {
+      padding: 20rem 0;
+      background: none; } }
   .picking .first-intro .infos {
     padding-top: 0rem;
     margin-top: -5rem;
@@ -409,7 +461,13 @@ a {
 
 .analysis {
   position: relative;
-  padding: 10rem 0 10rem; }
+  padding: 10rem 0; }
+  @media (min-width: 320px) {
+    .analysis {
+      padding: 7rem 0; } }
+  @media (min-width: 1200px) {
+    .analysis {
+      padding: 10rem 0; } }
   .analysis .clearfix {
     position: relative; }
   .analysis .infos {
@@ -434,12 +492,28 @@ a {
     position: absolute;
     top: 399px;
     left: 309px; }
+  .analysis .img-mobile {
+    margin-top: 4rem; }
 
 .stock {
   padding: 20rem 0 20rem; }
+  @media (min-width: 320px) {
+    .stock {
+      padding: 5rem 0 7rem;
+      background: #f1f1f2; } }
+  @media (min-width: 1200px) {
+    .stock {
+      padding: 20rem 0;
+      background: none; } }
   .stock .infos {
     padding-top: 20rem; }
 
+@media (min-width: 320px) {
+  .space {
+    padding: 5rem 0 8rem; } }
+@media (min-width: 1200px) {
+  .space {
+    padding: 0; } }
 .space .clearfix {
   padding: 1rem 0 2rem; }
 .space .img-holder {
@@ -458,9 +532,19 @@ a {
   left: 168px; }
 .space .img-monitor-3 {
   right: 322px; }
+.space .img-mobile {
+  margin-top: 4rem; }
 
 .growth {
   padding: 20rem 0 20rem; }
+  @media (min-width: 320px) {
+    .growth {
+      padding: 4rem 0 8rem;
+      background: #f1f1f2; } }
+  @media (min-width: 1200px) {
+    .growth {
+      padding: 20rem 0;
+      background: none; } }
   .growth .item {
     background: #f6f6f6 url(../img/home/line-vertical.png) repeat-y center center;
     padding-top: 30rem;
@@ -477,7 +561,15 @@ a {
     z-index: 1;
     left: 50%;
     margin-left: -63px; }
+  .growth .img-mobile {
+    margin-top: 4rem; }
 
+@media (min-width: 320px) {
+  .charging {
+    padding: 4rem 0 8rem; } }
+@media (min-width: 1200px) {
+  .charging {
+    padding: 0; } }
 .charging .first-intro .infos {
   padding-top: 4rem; }
 .charging .second-charge {
@@ -523,6 +615,8 @@ a {
   .charging .hero-rack .rack {
     position: relative;
     z-index: 2; }
+.charging .img-mobile {
+  margin-top: 4rem; }
 
 .line-horizontal {
   background-image: url("../img/home/line-horizontal.png");
@@ -548,6 +642,15 @@ a {
 
 .intro-sorter {
   background: #f6f6f6 url(../img/home/conveyorBeltBlack.png) repeat-y center center; }
+  @media (min-width: 320px) {
+    .intro-sorter {
+      background: #6d6e70;
+      color: #fff;
+      padding: 5rem 0 7rem; } }
+  @media (min-width: 1200px) {
+    .intro-sorter {
+      background: #f6f6f6 url(../img/home/conveyorBeltBlack.png) repeat-y center center;
+      color: #333; } }
   .intro-sorter .infos {
     position: relative;
     padding: 30rem 0 15rem;
@@ -575,6 +678,14 @@ a {
     font-size: 7rem;
     font-weight: 100;
     text-transform: uppercase; }
+    @media (min-width: 320px) {
+      .intro-sorter h1 {
+        font-size: 5rem;
+        margin-bottom: 2rem; } }
+    @media (min-width: 1200px) {
+      .intro-sorter h1 {
+        font-size: 7rem;
+        margin-bottom: 1rem; } }
   .intro-sorter .box {
     position: fixed;
     top: 22.5rem;
@@ -678,6 +789,78 @@ a {
     top: 10%;
     margin-left: -408px; }
 
+.sorter-elements {
+  min-height: 20rem;
+  color: #fff; }
+  @media (min-width: 320px) {
+    .sorter-elements {
+      background: #6d6e70 url(../img/home-mobile/conveyorBeltBlack.jpg) repeat-y center; } }
+  @media (min-width: 768px) {
+    .sorter-elements {
+      background: #6d6e70; } }
+  .sorter-elements .bg-overlay {
+    position: relative;
+    z-index: 2; }
+    @media (min-width: 320px) {
+      .sorter-elements .bg-overlay {
+        background: rgba(109, 110, 112, 0.6);
+        padding: 2rem 0 3rem;
+        margin: 3rem 0; } }
+    @media (min-width: 768px) {
+      .sorter-elements .bg-overlay {
+        background: none;
+        padding: 0;
+        margin: 0; } }
+  .sorter-elements .img-holder {
+    padding: 2rem 0;
+    overflow: hidden; }
+    @media (min-width: 320px) {
+      .sorter-elements .img-holder {
+        background: none; } }
+    @media (min-width: 768px) {
+      .sorter-elements .img-holder {
+        background: #6d6e70 url(../img/home-mobile/conveyorBeltBlack.jpg) repeat-y center;
+        padding-bottom: 200rem;
+        margin-bottom: -200rem; } }
+  .sorter-elements .motor1 {
+    position: relative;
+    top: -0.8rem; }
+  .sorter-elements .motor2 {
+    position: relative;
+    left: 0.7rem; }
+  .sorter-elements .scan2 {
+    position: relative;
+    left: 0rem; }
+  .sorter-elements .sort1 {
+    position: relative;
+    z-index: 0; }
+    @media (min-width: 320px) {
+      .sorter-elements .sort1 {
+        left: -10.7rem; } }
+    @media (min-width: 480px) {
+      .sorter-elements .sort1 {
+        left: -1.9rem; } }
+    @media (min-width: 768px) {
+      .sorter-elements .sort1 {
+        left: -6.2rem; } }
+    @media (min-width: 992px) {
+      .sorter-elements .sort1 {
+        left: -0.8rem; } }
+  .sorter-elements .sort2 {
+    position: relative; }
+    @media (min-width: 320px) {
+      .sorter-elements .sort2 {
+        left: 13.2rem; } }
+    @media (min-width: 480px) {
+      .sorter-elements .sort2 {
+        left: 22rem; } }
+    @media (min-width: 768px) {
+      .sorter-elements .sort2 {
+        left: 15.3rem; } }
+    @media (min-width: 992px) {
+      .sorter-elements .sort2 {
+        left: 20.8rem; } }
+
 .email-footer {
   background: #f8971c;
   padding: 1rem 0 3rem 0;
@@ -688,6 +871,12 @@ a {
     margin: 0;
     font-size: 2.5rem;
     padding: 2rem 0; }
+    @media (min-width: 320px) {
+      .email-footer p {
+        font-size: 2rem; } }
+    @media (min-width: 1200px) {
+      .email-footer p {
+        font-size: 2.5rem; } }
     .email-footer p.thanks {
       padding-bottom: 0; }
   .email-footer .blinking-cursor {
@@ -700,6 +889,14 @@ a {
     border: none;
     outline: 0;
     border-radius: 0; }
+    @media (min-width: 320px) {
+      .email-footer .form-control {
+        font-size: 1.8rem;
+        height: 4rem; } }
+    @media (min-width: 1200px) {
+      .email-footer .form-control {
+        font-size: 2.2rem;
+        height: 5rem; } }
   .email-footer .btn-link {
     color: #fff;
     font-size: 2.5rem;
@@ -708,6 +905,14 @@ a {
     border: solid 1px #fff;
     border-radius: 0;
     height: 50px; }
+    @media (min-width: 320px) {
+      .email-footer .btn-link {
+        font-size: 2rem;
+        height: 4rem; } }
+    @media (min-width: 1200px) {
+      .email-footer .btn-link {
+        font-size: 2.5rem;
+        height: 5rem; } }
 
 .main-footer {
   background: #1e1e1e;
@@ -715,6 +920,12 @@ a {
   padding: 4rem 8rem 3rem 8rem;
   z-index: 4;
   position: relative; }
+  @media (min-width: 320px) {
+    .main-footer {
+      padding: 3rem 1rem 3rem 1rem; } }
+  @media (min-width: 1200px) {
+    .main-footer {
+      padding: 4rem 8rem 3rem 8rem; } }
   .main-footer .logo-footer {
     padding: 3.5rem 0 2rem; }
   .main-footer h3 {
@@ -725,6 +936,12 @@ a {
     margin-top: 0; }
   .main-footer hr {
     margin: 3rem 1.5rem; }
+    @media (min-width: 320px) {
+      .main-footer hr {
+        margin: 2rem 1.5rem 0.5rem 1.5rem; } }
+    @media (min-width: 1200px) {
+      .main-footer hr {
+        margin: 3rem 1.5rem; } }
   .main-footer ul {
     font-size: 1.8rem; }
     .main-footer ul li {

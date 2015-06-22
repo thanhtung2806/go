@@ -135,7 +135,7 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 .homepage-mobile {
   // h2 { font-family: 'SohoGothicPro-Medium'; font-weight: 400; }
   p { font-size: 2rem; }
-  * { -webkit-transition:All .3s ease;-moz-transition:All .3s ease;-o-transition:All .3s ease;-ms-transition:All .3s ease;}
+  // * { -webkit-transition:All .3s ease;-moz-transition:All .3s ease;-o-transition:All .3s ease;-ms-transition:All .3s ease;}
   .container {
     @include mobile { width: 320px; }
     @include lmobile { width: 480px; }
