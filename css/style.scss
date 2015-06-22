@@ -59,7 +59,11 @@ html {  font-size: 62.5%;
   @include lmobile { font-size: 55%; }
   @include tablet { font-size: 62.5%; }
 }
-body { background: #f6f6f6 url(../img/home/line-vertical.png) repeat-y center center; font-family: 'ProximaNova'; color: $black-color; font-size: 16px; font-size: 1.6rem; line-height: 1.525; min-height: 3000px;}
+body { background: #f6f6f6 url(../img/home/line-vertical.png) repeat-y center center; font-family: 'ProximaNova'; color: $black-color; font-size: 16px; font-size: 1.6rem; line-height: 1.525;
+  @include mobile { background: #fff; }
+  @include ldesktop { background: #f6f6f6 url(../img/home/line-vertical.png) repeat-y center center; }
+}
+
 .h1, .h2, .h3, h1, h2, h3 { margin-bottom: 1rem }
 .h1,h1 { font-size: 38px; font-size: 3.8rem; }
 .h2,h2 { font-size: 30px; font-size: 3rem; }
@@ -71,6 +75,7 @@ body { background: #f6f6f6 url(../img/home/line-vertical.png) repeat-y center ce
 .white { color: $white-color; }
 .mb15 { margin-bottom: 15px; }
 .mt10 { margin-top: 10px; } .mt15 { margin-top: 15px; }
+
 a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s ease;-o-transition:All .3s ease;-ms-transition:All .3s ease;
   &:hover { color: darken($main-color, 10%); outline: 0;}
 }
@@ -83,25 +88,43 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 
 
 // header
-.navbar-go { background-color: $white-color; border: none; min-height: 67px;
-  .dropdown-menu { background: #716f70; text-align: right; border: none;
+.navbar-go { background-color: $white-color; border: none; min-height: 67px; margin-bottom: 0; text-align: center;
+  @include mobile { min-height: 40px; }
+  @include desktop { min-height: 67px; }
+  @include ldesktop { min-height: 67px; }
+  .dropdown-menu { background: #716f70;  border: none;
+    @include mobile { text-align: left;  }
+    @include ldesktop { text-align: right; }
     a { color: $white-color; font-size: 2rem;
-      &:hover { color: $white-color; background: none; }
+      @include mobile { color: $black-color; }
+      @include ldesktop { color: $white-color; }
+      &:hover { color: $white-color; background: none;
+        @include mobile { color: $black-color; }
+        @include ldesktop { color: $white-color; }
+      }
     }
   }
   // .navbar-right { margin-top: 7px; }
 }
-.navbar-go .navbar-brand{  height: 67px; padding: 21px 15px; }
+.navbar-go .navbar-brand{  height: 67px; padding: 21px 15px;
+  @include mobile { height: 34px;  padding: 8px 15px; float: none; display: inline-block;}
+  @include desktop { height: 67px; float: left;}
+  @include ldesktop { height: 67px;  padding: 21px 15px; }
+}
 // .navbar-go .navbar-brand:focus,.navbar-go .navbar-brand:hover{color:#5e5e5e;background-color:transparent}
 .navbar-go .navbar-text{color: $black-color; }
-.navbar-go .navbar-nav>li>a{color: $black-color; font-size: 2rem; text-transform: uppercase; font-family: 'SohoGothicPro'; padding: 20px 15px 27px 15px;}
+.navbar-go .navbar-nav>li>a{color: $black-color; font-size: 2rem; text-transform: uppercase; font-family: 'SohoGothicPro';
+  @include mobile { padding: 10px; }
+  @include desktop { padding: 20px 15px 27px 15px;}
+  @include ldesktop { padding: 20px 15px 27px 15px;}
+}
 .navbar-go .navbar-nav>li>a:focus,.navbar-go .navbar-nav>li>a:hover{color:#333;background-color:transparent}
 .navbar-go .navbar-nav>.active>a,.navbar-go .navbar-nav>.active>a:focus,.navbar-go .navbar-nav>.active>a:hover{color:#555;background-color:#e7e7e7}
 .navbar-go .navbar-nav>.disabled>a,.navbar-go .navbar-nav>.disabled>a:focus,.navbar-go .navbar-nav>.disabled>a:hover{color:#ccc;background-color:transparent}
-.navbar-go .navbar-toggle{border-color:#ddd}
-.navbar-go .navbar-toggle:focus,.navbar-go .navbar-toggle:hover{background-color:#ddd}
-.navbar-go .navbar-toggle .icon-bar{background-color:#888}
-.navbar-go .navbar-collapse,.navbar-go .navbar-form{border-color:#e7e7e7}
+.navbar-go .navbar-toggle{border: none; margin-top:0; margin-bottom:0; margin-right: 0;}
+.navbar-go .navbar-toggle:focus,.navbar-go .navbar-toggle:hover{background-color: none;}
+.navbar-go .navbar-toggle .icon-bar{background-color:#f89c28; width: 26px; height: 4px; }
+.navbar-go .navbar-collapse,.navbar-go .navbar-form{border-color:#e7e7e7; text-align: left; }
 .navbar-go .navbar-nav>.open>a,.navbar-go .navbar-nav>.open>a:focus,.navbar-go .navbar-nav>.open>a:hover{background-color:#f0f1f1}
 
 .homepage {
@@ -109,19 +132,31 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
   p { font-size: 2rem; }
   .clearfix { max-width: 1280px; margin-left: auto; margin-right: auto; }
 }
+.homepage-mobile {
+  // h2 { font-family: 'SohoGothicPro-Medium'; font-weight: 400; }
+  p { font-size: 2rem; }
+  * { -webkit-transition:All .3s ease;-moz-transition:All .3s ease;-o-transition:All .3s ease;-ms-transition:All .3s ease;}
+  .container {
+    @include mobile { width: 320px; }
+    @include lmobile { width: 480px; }
+    @include tablet { width: 750px; }
+    @include desktop { width: 970px; }
+    @include ldesktop { width: 1170px; }
+  }
+}
 
 //slider
 .home-slide { background: #fff;
-  .img-holder { background-size: cover; width: 100%; height: 512px;
-    @include mobile { height: 312px; }
-    @include lmobile { height: 360px; }
-    @include tablet { height: 400px; }
-    @include desktop { height: 512px; }
+  .img-holder { background-size: cover; width: 100%;
+    @include mobile { height: 212px; }
+    @include lmobile { height: 260px; }
+    @include tablet { height: 320px; }
+    @include desktop { height: 412px; }
+    @include ldesktop { height: 512px; }
   }
   .carousel-caption { background: rgba(248,151,28,0.94); bottom: 35%; margin-bottom: -100px; text-shadow: none;
-    @include mobile { right: 5%; left: 5%; padding-left: 10px; padding-right: 10px;}
-    @include tablet { right: 30%; left: 30%; padding-left: 20px; padding-right: 20px;}
-    // @include desktop { right: 35%; left: 35%; }
+    @include mobile { right: 0; left: 0; position: relative; bottom:0;  margin-bottom: 0px;}
+    @include desktop { right: 30%; left: 30%; padding-left: 20px; padding-right: 20px; bottom: 35%; margin-bottom: -100px; position: absolute;}
     h3 { margin-top: 0; font-family: 'SohoGothicPro-Medium'; font-weight: 400;
       @include mobile { margin-top:0; }
       @include tablet { margin-top:2rem;}
@@ -129,7 +164,8 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     p { font-size: 2rem; }
   }
   .carousel-indicators {
-    @include tablet { bottom: 10px; }
+    @include mobile { bottom: 38%; }
+    @include desktop { bottom: 10px; }
   }
   .carousel-indicators li { background: $white-color; margin: 1px 10px; width: 13px; height: 13px; border-radius: 13px; }
   .carousel-indicators .active { background: $main-color; border-color: $main-color;margin: 0px 10px; width: 15px; height: 15px; }
@@ -137,21 +173,23 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 
 // intro butler
 .intro-butler { padding: 17rem 0; background: $white-color; position: relative;
-  @include mobile { padding: 7rem 0;; }
-  @include tablet { padding: 17rem 0;; }
+  @include mobile { padding: 4rem 0; }
+  @include tablet { padding: 7rem 0; }
+  @include ldesktop { padding: 17rem 0; }
   h1 { font-family: 'SohoGothicPro'; font-weight: 100; font-size: 7rem; color: $main-color; margin-bottom: 3rem;
     @include mobile { font-size: 5rem; }
-    @include tablet { font-size: 7rem; }
+    @include ldesktop { font-size: 7rem; }
   }
   p { font-size: 2rem; margin-bottom: 1rem; }
-  img { margin-top: 2rem; }
+  img { margin-top: 2rem; margin-bottom: 2rem; }
   .scroll { position: absolute; left: 50%; top: 7%; margin-left: -24px; animation-duration: 3s;
   animation-delay: 1s; }
 }
 
 //door
 .door {
-  background: #f6f6f6;
+  @include mobile { background: #fff; }
+  @include ldesktop { background: #f6f6f6; }
   .door-holders { background: $white-color; position: relative; }
   // .clearfix { max-width: none; background: $white-color; position: relative; }
   img.img-door { left: -10px; position: relative; z-index: 2;}
@@ -162,9 +200,14 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 
 //walking
 .walking { padding: 30rem 0 20rem;
+  @include mobile { padding: 7rem 0;}
+  @include ldesktop { padding: 30rem 0 20rem; }
   .img-walking { position: relative; }
   .img-walking-pof { position: fixed; top: 233px; left: 146px; }
-  .infos { padding-top: 25rem; }
+  .infos { padding-top: 25rem;
+    @include mobile { padding-top: 0rem;  }
+    @include ldesktop { padding-top: 25rem;  }
+  }
   .hero-holder { z-index: 2; }
   .bulter { position: absolute; bottom: -5px; left: 50%; margin-left: -66px; z-index:1;}
   .hero-rack { position: relative; top: 150px; left: -105px; z-index: 3; width: 176px;
@@ -174,9 +217,12 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
   }
   .infos-holder-pof { width: 290px; position: fixed; top: 356px; left: 868px; }
   .infos-holder { position: relative; }
+  .img-mobile { margin-top: 4rem }
 }
 
 .picking { padding: 20rem 0 20rem;
+  @include mobile { padding: 7rem 0 0 0; background: #f1f1f2;}
+  @include ldesktop { padding: 20rem 0; background: none;}
   .first-intro {
     .infos { padding-top: 0rem; margin-top: -5rem; position: relative; }
     .img-holder { background: #eff4f4; padding-bottom: 15rem; padding-right:0;
@@ -189,20 +235,27 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
   }
 }
 
-.analysis { position: relative; padding: 10rem 0 10rem;
+.analysis { position: relative; padding: 10rem 0;
+  @include mobile { padding: 7rem 0;}
+  @include ldesktop { padding: 10rem 0;}
   .clearfix { position: relative; }
   .infos { left: 57%; top: 17%; position: absolute; z-index: 3;}
   img { z-index: 2; position: relative; }
   .img-monitor { position: fixed; z-index: 3; left: 50%; margin-left: -24px; top: 490px; }
   .img-monitor2 { position: absolute; top: 399px; left: 735px; }
   .img-monitor3 { position: absolute; top: 399px; left: 309px; }
+  .img-mobile { margin-top: 4rem; }
 }
 
 .stock { padding: 20rem 0 20rem;
+  @include mobile { padding: 5rem 0 7rem; background: #f1f1f2;}
+  @include ldesktop { padding: 20rem 0; background: none;}
   .infos { padding-top: 20rem; }
 }
 
 .space {
+  @include mobile { padding: 5rem 0 8rem;}
+  @include ldesktop { padding: 0;}
   .clearfix { padding: 1rem 0 2rem;}
   .img-holder{ padding-left: 0; padding-right:0 ; font-size: 70px; }
   img { display: inline-block; }
@@ -210,17 +263,23 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
   .img-monitor-1 { left:360px; }
   .img-monitor-2 { left:168px; }
   .img-monitor-3 { right:322px; }
+  .img-mobile { margin-top: 4rem; }
 }
 
 .growth { padding: 20rem 0 20rem;
+  @include mobile { padding: 4rem 0 8rem; background: #f1f1f2;}
+  @include ldesktop { padding: 20rem 0; background: none;}
   .item { background: #f6f6f6 url(../img/home/line-vertical.png) repeat-y center center; padding-top: 30rem; position: relative; }
   .img-holder { padding-top: 20rem; position: relative;
     img.center-block { z-index: 2;position: relative; }
   }
   .img-monitor { position: absolute; top: 0; z-index:1; left: 50%; margin-left: -63px; }
+  .img-mobile { margin-top: 4rem; }
 }
 
 .charging {
+  @include mobile { padding: 4rem 0 8rem;}
+  @include ldesktop { padding: 0;}
   .first-intro {
     .infos { padding-top: 4rem; }
   }
@@ -238,7 +297,7 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     .bulter { position: absolute; bottom: -35px; left: 50%; margin-left: -63px; z-index:1;}
     .rack { position: relative; z-index: 2; }
   }
-
+  .img-mobile { margin-top: 4rem; }
 }
 .line-horizontal {
   background-image: url('../img/home/line-horizontal.png');
@@ -252,6 +311,8 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 .motor-bot { bottom: 0; }
 .motor-top { top: 0; }
 .intro-sorter { background: #f6f6f6 url(../img/home/conveyorBeltBlack.png) repeat-y center center;
+  @include mobile { background: #6d6e70; color: #fff;padding: 5rem 0 7rem; }
+  @include ldesktop { background: #f6f6f6 url(../img/home/conveyorBeltBlack.png) repeat-y center center; color: #333; }
   .infos { position: relative; padding: 30rem 0 15rem; z-index:2;
     &:after{content:"";display:block;position:absolute;bottom:0;left:0;width:100%;height:100%;pointer-events:none;background-color:rgba(255,255,255,0.15) ;
     background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.71) 51%, #ffffff 100%);
@@ -260,7 +321,10 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     opacity:.9;z-index:1;background-blend-mode:multiply}
   }
   .holder { z-index:2; }
-  h1 { font-family: 'SohoGothicPro'; font-size: 7rem; font-weight: 100; text-transform: uppercase; }
+  h1 { font-family: 'SohoGothicPro'; font-size: 7rem; font-weight: 100; text-transform: uppercase;
+    @include mobile { font-size: 5rem; margin-bottom: 2rem; }
+    @include ldesktop { font-size: 7rem; margin-bottom: 1rem; }
+  }
   .box { position: fixed; top: 22.5rem; width: 100%; left:0; z-index:1;
     img { display: block; margin-top: 10rem;}
   }
@@ -293,22 +357,65 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
   .armLeft { position: absolute; left: 50%; top: 10%; margin-left: -408px;}
 }
 
+// mobile sorter elements
+.sorter-elements {  min-height: 20rem; color: #fff;
+  @include mobile { background: #6d6e70 url(../img/home-mobile/conveyorBeltBlack.jpg) repeat-y center;}
+  @include tablet { background: #6d6e70; }
+  .bg-overlay { position: relative; z-index:2;
+    @include mobile { background: rgba(109,110,112,.6); padding: 2rem 0 3rem; margin: 3rem 0; }
+    @include tablet {  background: none; padding: 0; margin: 0; }
+  }
+  .img-holder { padding: 2rem 0; overflow: hidden;
+    @include mobile {  background: none; }
+    @include tablet {  background: #6d6e70 url(../img/home-mobile/conveyorBeltBlack.jpg) repeat-y center; padding-bottom: 200rem; margin-bottom: -200rem;}
+  }
+
+  .motor1 { position: relative; top: -0.8rem; }
+  .motor2 { position: relative; left: 0.7rem; }
+  .scan2 { position: relative; left: 0rem; }
+  .sort1 { position: relative;  z-index:0;
+    @include mobile { left: -10.7rem;  }
+    @include lmobile { left: -1.9rem;  }
+    @include tablet { left: -6.2rem;  }
+    @include desktop { left: -0.8rem;  }
+  }
+  .sort2 { position: relative;
+    @include mobile { left: 13.2rem;  }
+    @include lmobile { left: 22rem;  }
+    @include tablet { left: 15.3rem;  }
+    @include desktop { left: 20.8rem;  }
+  }
+}
+
 .email-footer { background: $main-color; padding: 1rem 0 3rem 0; color: $white-color; z-index:4; position: relative;
   p { margin: 0; font-size: 2.5rem; padding: 2rem 0;
+    @include mobile {font-size: 2rem; }
+    @include ldesktop {font-size: 2.5rem; }
     &.thanks { padding-bottom:0; }
   }
   .blinking-cursor { top: 0.1rem; position: relative;}
   // .input-group { margin-bottom: 2rem; }
-  .form-control { background: #fff; font-size: 2.2rem; color: #000; border: none; outline: 0; border-radius: 0;}
-  .btn-link { color: #fff; font-size: 2.5rem; padding-top:6px ; padding-bottom: 6px ; border: solid 1px #fff; border-radius: 0;height: 50px;}
+  .form-control { background: #fff; font-size: 2.2rem; color: #000; border: none; outline: 0; border-radius: 0;
+    @include mobile {font-size: 1.8rem; height: 4rem;}
+    @include ldesktop {font-size: 2.2rem; height: 5rem;}
+  }
+  .btn-link { color: #fff; font-size: 2.5rem; padding-top:6px ; padding-bottom: 6px ; border: solid 1px #fff; border-radius: 0;height: 50px;
+    @include mobile {font-size: 2rem; height: 4rem; }
+    @include ldesktop {font-size: 2.5rem; height: 5rem;}
+  }
 }
 
 
 .main-footer { background: #1e1e1e; color: #bbb; padding: 4rem 8rem 3rem 8rem; z-index:4; position: relative;
+  @include mobile { padding: 3rem 1rem 3rem 1rem; }
+  @include ldesktop { padding: 4rem 8rem 3rem 8rem; }
   .logo-footer { padding: 3.5rem 0 2rem; }
   h3 { color: #bbb; font-weight: 600; }
   h4 { line-height: 1.4; margin-top:0; }
-  hr { margin: 3rem 1.5rem; }
+  hr { margin: 3rem 1.5rem;
+    @include mobile { margin: 2rem 1.5rem 0.5rem 1.5rem;  }
+    @include ldesktop { margin: 3rem 1.5rem;  }
+  }
   ul { font-size: 1.8rem;
     li { margin-bottom: 0.7rem; }
   }
