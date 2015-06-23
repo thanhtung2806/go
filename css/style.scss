@@ -3,7 +3,7 @@ $mobile-width: 320px;
 $lmobile-width: 480px;
 $tablet-width: 768px;
 $desktop-width: 992px;
-$ldesktop-width: 1200px;
+$ldesktop-width: 1280px;
 
 @mixin mobile {
   @media (min-width: #{$mobile-width}) {
@@ -59,11 +59,16 @@ html {  font-size: 62.5%;
   @include lmobile { font-size: 55%; }
   @include tablet { font-size: 62.5%; }
 }
-body { background: #f6f6f6 url(../img/home/line-vertical.png) repeat-y center center; font-family: 'ProximaNova'; color: $black-color; font-size: 16px; font-size: 1.6rem; line-height: 1.525;
-  @include mobile { background: #fff; }
-  @include ldesktop { background: #f6f6f6 url(../img/home/line-vertical.png) repeat-y center center; }
-}
+body { font-family: 'ProximaNova'; color: $black-color; font-size: 16px; font-size: 1.6rem; line-height: 1.525; background: #fff;
+  &.homepage {
+    @include mobile { background: #fff; }
+    @include ldesktop { background: #f6f6f6 url(../img/home/line-vertical.png) repeat-y center center; }
+  }
 
+}
+.container {
+  @include ldesktop { width: 1280px; }
+}
 .h1, .h2, .h3, h1, h2, h3 { margin-bottom: 1rem }
 .h1,h1 { font-size: 38px; font-size: 3.8rem; }
 .h2,h2 { font-size: 30px; font-size: 3rem; }
@@ -92,6 +97,7 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
   @include mobile { min-height: 40px; }
   @include desktop { min-height: 67px; }
   @include ldesktop { min-height: 67px; }
+
   .dropdown-menu { background: #716f70;  border: none;
     @include mobile { text-align: left;  }
     @include ldesktop { text-align: right; }
@@ -104,12 +110,14 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
       }
     }
   }
+
   // .navbar-right { margin-top: 7px; }
 }
 .navbar-go .navbar-brand{  height: 67px; padding: 21px 15px;
   @include mobile { height: 34px;  padding: 8px 15px; float: none; display: inline-block;}
-  @include desktop { height: 67px; float: left;}
-  @include ldesktop { height: 67px;  padding: 21px 15px; }
+  @include desktop { height: 67px; float: left; line-height: 45px; }
+  @include ldesktop { height: 67px; }
+  img { display: inline-block; }
 }
 // .navbar-go .navbar-brand:focus,.navbar-go .navbar-brand:hover{color:#5e5e5e;background-color:transparent}
 .navbar-go .navbar-text{color: $black-color; }
@@ -132,6 +140,7 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
   p { font-size: 2rem; }
   .clearfix { max-width: 1280px; margin-left: auto; margin-right: auto; }
 }
+
 .homepage-mobile {
   // h2 { font-family: 'SohoGothicPro-Medium'; font-weight: 400; }
   p { font-size: 2rem; }
@@ -139,9 +148,12 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
   .container {
     @include mobile { width: 320px; }
     @include lmobile { width: 480px; }
-    @include tablet { width: 750px; }
-    @include desktop { width: 970px; }
-    @include ldesktop { width: 1170px; }
+    @include tablet { width: 750px; display: flex; align-items: center; justify-content: center; }
+    // @include desktop { width: 970px; }
+    // @include ldesktop { width: 1170px; }
+  }
+  .navbar-go .container {
+    @include tablet { display: block; }
   }
 }
 
@@ -164,7 +176,8 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     p { font-size: 2rem; }
   }
   .carousel-indicators {
-    @include mobile { bottom: 38%; }
+    @include mobile { bottom: 42%; }
+    @include lmobile { bottom: 38%; }
     @include desktop { bottom: 10px; }
   }
   .carousel-indicators li { background: $white-color; margin: 1px 10px; width: 13px; height: 13px; border-radius: 13px; }
@@ -361,13 +374,17 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 .sorter-elements {  min-height: 20rem; color: #fff;
   @include mobile { background: #6d6e70 url(../img/home-mobile/conveyorBeltBlack.jpg) repeat-y center;}
   @include tablet { background: #6d6e70; }
+  .container { display: block; }
+  .clearfix {
+    @include tablet { display: flex; align-items: center; justify-content: center; }
+  }
   .bg-overlay { position: relative; z-index:2;
     @include mobile { background: rgba(109,110,112,.6); padding: 2rem 0 3rem; margin: 3rem 0; }
-    @include tablet {  background: none; padding: 0; margin: 0; }
+    @include tablet {  background: none; padding: 2rem 0; margin: 0; }
   }
   .img-holder { padding: 2rem 0; overflow: hidden;
     @include mobile {  background: none; }
-    @include tablet {  background: #6d6e70 url(../img/home-mobile/conveyorBeltBlack.jpg) repeat-y center; padding-bottom: 200rem; margin-bottom: -200rem;}
+    @include tablet {  background: #6d6e70 url(../img/home-mobile/conveyorBeltBlack.jpg) repeat-y center; padding-bottom: 200rem; margin-bottom: -200rem; }
   }
 
   .motor1 { position: relative; top: -0.8rem; }
@@ -377,17 +394,18 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     @include mobile { left: -10.7rem;  }
     @include lmobile { left: -1.9rem;  }
     @include tablet { left: -6.2rem;  }
-    @include desktop { left: -0.8rem;  }
+    // @include desktop { left: -0.8rem;  }
   }
   .sort2 { position: relative;
     @include mobile { left: 13.2rem;  }
     @include lmobile { left: 22rem;  }
     @include tablet { left: 15.3rem;  }
-    @include desktop { left: 20.8rem;  }
+    // @include desktop { left: 20.8rem;  }
   }
 }
 
 .email-footer { background: $main-color; padding: 1rem 0 3rem 0; color: $white-color; z-index:4; position: relative;
+  .container { display: block; }
   p { margin: 0; font-size: 2.5rem; padding: 2rem 0;
     @include mobile {font-size: 2rem; }
     @include ldesktop {font-size: 2.5rem; }
@@ -414,7 +432,7 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
   h4 { line-height: 1.4; margin-top:0; }
   hr { margin: 3rem 1.5rem;
     @include mobile { margin: 2rem 1.5rem 0.5rem 1.5rem;  }
-    @include ldesktop { margin: 3rem 1.5rem;  }
+    @include tablet { margin: 3rem 1.5rem;  }
   }
   ul { font-size: 1.8rem;
     li { margin-bottom: 0.7rem; }
