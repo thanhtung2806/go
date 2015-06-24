@@ -227,12 +227,18 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     @include mobile { padding-top: 0rem;  }
     @include ldesktop { padding-top: 25rem;  }
   }
-  .hero-holder { z-index: 2; }
+  .hero-holder { z-index: 2; position: relative; top:0%; margin-left: 0px; }
+
   .bulter { position: absolute; bottom: -5px; left: 50%; margin-left: -66px; z-index:1;}
   .hero-rack { position: relative; top: 150px; left: -105px; z-index: 3; width: 176px;
     .shadow { position: absolute; bottom:0; left: 2px; }
     .box { position: absolute; top: 27px; left: 40px; z-index: 3;}
     .rack { z-index: 3; position: relative; }
+  }
+  .hero-holder-pof { position: fixed; top: 35px; z-index: 2; margin-left: 4.4px;
+    .rack { top: -30px; }
+    .shadow { bottom: 30px; }
+    .box { top: -3px; }
   }
   .infos-holder-pof { width: 290px; position: fixed; top: 356px; left: 868px; }
   .infos-holder { position: relative; }
@@ -345,9 +351,9 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     @include ldesktop { font-size: 7rem; margin-bottom: 1rem; }
   }
   .box { position: fixed; top: 22.5rem; width: 100%; left:0; z-index:1;
-    img { display: block; margin-top: 10rem;}
+    img { display: block; margin-top: 5rem;}
   }
-  .motor { margin-left: -122px; margin-top: -10px; }
+  .motor { margin-left: -122px; margin-top: -60px; }
 }
 
 .process-sorter { background: #6d6e70 url(../img/home/conveyorBeltBlack.png) repeat-y center center; min-height: 1000px; color: $white-color;

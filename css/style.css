@@ -411,7 +411,10 @@ a {
       .walking .infos {
         padding-top: 25rem; } }
   .walking .hero-holder {
-    z-index: 2; }
+    z-index: 2;
+    position: relative;
+    top: 0%;
+    margin-left: 0px; }
   .walking .bulter {
     position: absolute;
     bottom: -5px;
@@ -436,6 +439,17 @@ a {
     .walking .hero-rack .rack {
       z-index: 3;
       position: relative; }
+  .walking .hero-holder-pof {
+    position: fixed;
+    top: 35px;
+    z-index: 2;
+    margin-left: 4.4px; }
+    .walking .hero-holder-pof .rack {
+      top: -30px; }
+    .walking .hero-holder-pof .shadow {
+      bottom: 30px; }
+    .walking .hero-holder-pof .box {
+      top: -3px; }
   .walking .infos-holder-pof {
     width: 290px;
     position: fixed;
@@ -709,10 +723,10 @@ a {
     z-index: 1; }
     .intro-sorter .box img {
       display: block;
-      margin-top: 10rem; }
+      margin-top: 5rem; }
   .intro-sorter .motor {
     margin-left: -122px;
-    margin-top: -10px; }
+    margin-top: -60px; }
 
 .process-sorter {
   background: #6d6e70 url(../img/home/conveyorBeltBlack.png) repeat-y center center;
