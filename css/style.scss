@@ -143,7 +143,9 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
   .clearfix { max-width: 1280px; margin-left: auto; margin-right: auto; }
 }
 
-.homepage-mobile {
+.homepage-mobile { display: block;
+  @include mobile { display: block; }
+  @include ldesktop { display: none; }
   // h2 { font-family: 'SohoGothicPro-Medium'; font-weight: 400; }
   p { font-size: 2rem; }
   // * { -webkit-transition:All .3s ease;-moz-transition:All .3s ease;-o-transition:All .3s ease;-ms-transition:All .3s ease;}
@@ -161,7 +163,9 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     img { background: url('../img/home-mobile/backgroundGradient.png') repeat-x bottom;}
   }
 }
-
+.homepage-desktop { display: none;
+  @include ldesktop { display: block; }
+}
 //slider
 .home-slide { background: #fff;
   .img-holder { background-size: cover; width: 100%;
@@ -186,8 +190,14 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     @include lmobile { bottom: 38%; }
     @include desktop { bottom: 10px; }
   }
-  .carousel-indicators li { background: $white-color; margin: 1px 10px; width: 13px; height: 13px; border-radius: 13px; }
-  .carousel-indicators .active { background: $main-color; border-color: $main-color;margin: 0px 10px; width: 15px; height: 15px; }
+  .carousel-indicators li { background: $white-color; border-radius: 100%;
+    @include mobile { width: 9px; height: 9px; margin: 1px 6px; }
+    @include tablet { width: 13px; height: 13px; margin: 1px 10px; }
+  }
+  .carousel-indicators .active { background: $main-color; border-color: $main-color;
+    @include mobile { margin: 0px 6px; width: 11px; height: 11px;  }
+    @include tablet { margin: 0px 10px; width: 15px; height: 15px;  }
+  }
 }
 
 // intro butler
@@ -469,6 +479,7 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     }
     p { margin-top:0; }
   }
+  .img-flag{ position: relative; margin: -4px 4px 0px 0; }
 }
 
 .main-content { padding-top: 67px; min-height: 1000px;
@@ -490,8 +501,13 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
   @include mobile { padding: 4rem 0 2rem; }
   @include desktop { padding: 8rem 0 6rem; }
   .item { position: relative; margin-bottom: 2rem; padding-left: 1rem; padding-right: 1rem;
-    &:hover, &.join-item {
+    &:hover {
       img {-webkit-filter: none; filter: none; }
+    }
+    &.join-item {
+      img {-webkit-filter: none; filter: none;
+        &:hover { -webkit-filter: contrast(2); filter: contrast(2);  }
+      }
     }
     .infos { position: absolute; width: 100%; bottom: 0; color: #fff; padding: 0 1.2rem;}
     h4 { margin: 0; }
