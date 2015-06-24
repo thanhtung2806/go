@@ -90,23 +90,25 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 .form-group { margin-bottom: 20px; }
 .checkbox, .radio {margin-bottom: 15px;}
 .no-gutter > [class*='col-'] { padding-right:0; padding-left:0; }
-
+.text-right {
+  @include tablet { text-alight: right; }
+}
 
 // header
 .navbar-go { background-color: $white-color; border: none; min-height: 67px; margin-bottom: 0; text-align: center;
   @include mobile { min-height: 40px; }
-  @include desktop { min-height: 67px; }
-  @include ldesktop { min-height: 67px; }
+  @include tablet { min-height: 67px; }
+  // @include ldesktop { min-height: 67px; }
 
   .dropdown-menu { background: #716f70;  border: none;
     @include mobile { text-align: left;  }
-    @include ldesktop { text-align: right; }
+    @include tablet { text-align: right; }
     a { color: $white-color; font-size: 2rem;
       @include mobile { color: $black-color; }
-      @include ldesktop { color: $white-color; }
-      &:hover { color: $white-color; background: none;
+      @include tablet { color: $white-color; }
+      &:hover { color: $white-color; background: darken(#716f70, 5%);
         @include mobile { color: $black-color; }
-        @include ldesktop { color: $white-color; }
+        @include tablet { color: $white-color; }
       }
     }
   }
@@ -114,17 +116,17 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
   // .navbar-right { margin-top: 7px; }
 }
 .navbar-go .navbar-brand{  height: 67px; padding: 21px 15px;
-  @include mobile { height: 34px;  padding: 8px 15px; float: none; display: inline-block;}
-  @include desktop { height: 67px; float: left; line-height: 45px; }
-  @include ldesktop { height: 67px; }
+  @include mobile { height: 34px;  padding: 8px 10px;}
+  @include tablet { height: 67px; float: left; line-height: 45px; }
+  // @include ldesktop { height: 67px; }
   img { display: inline-block; }
 }
 // .navbar-go .navbar-brand:focus,.navbar-go .navbar-brand:hover{color:#5e5e5e;background-color:transparent}
 .navbar-go .navbar-text{color: $black-color; }
 .navbar-go .navbar-nav>li>a{color: $black-color; font-size: 2rem; text-transform: uppercase; font-family: 'SohoGothicPro';
   @include mobile { padding: 10px; }
-  @include desktop { padding: 20px 15px 27px 15px;}
-  @include ldesktop { padding: 20px 15px 27px 15px;}
+  @include tablet { padding: 20px 15px 27px 15px;}
+  // @include ldesktop { padding: 20px 15px 27px 15px;}
 }
 .navbar-go .navbar-nav>li>a:focus,.navbar-go .navbar-nav>li>a:hover{color:#333;background-color:transparent}
 .navbar-go .navbar-nav>.active>a,.navbar-go .navbar-nav>.active>a:focus,.navbar-go .navbar-nav>.active>a:hover{color:#555;background-color:#e7e7e7}
@@ -152,7 +154,7 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     // @include desktop { width: 970px; }
     // @include ldesktop { width: 1170px; }
   }
-  .navbar-go .container {
+  .navbar-go .container { width: 100%;
     @include tablet { display: block; }
   }
   .door { background: #fff;
@@ -170,7 +172,7 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     @include ldesktop { height: 512px; }
   }
   .carousel-caption { background: rgba(248,151,28,0.94); bottom: 35%; margin-bottom: -100px; text-shadow: none;
-    @include mobile { right: 0; left: 0; position: relative; bottom:0;  margin-bottom: 0px; padding-left: 1rem; padding-right: 1rem;}
+    @include mobile { right: 0; left: 0; position: relative; bottom:0;  margin-bottom: 0px; padding-left: 2rem; padding-right: 2rem;}
     @include desktop { right: 30%; left: 30%; padding-left: 20px; padding-right: 20px; bottom: 38%; margin-bottom: -100px; position: absolute;}
     @include ldesktop { bottom: 35%; }
     h3 { margin-top: 0; font-family: 'SohoGothicPro-Medium'; font-weight: 400;
@@ -217,8 +219,8 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 
 //walking
 .walking { padding: 30rem 0 20rem;
-  @include mobile { padding: 7rem 0;}
-  @include ldesktop { padding: 30rem 0 20rem; }
+  @include mobile { padding: 7rem 0;  background: #f1f1f2;}
+  @include ldesktop { padding: 30rem 0 20rem; background: none;}
   .img-walking { position: relative; }
   .img-walking-pof { position: fixed; top: 233px; left: 146px; }
   .infos { padding-top: 25rem;
@@ -238,8 +240,8 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 }
 
 .picking { padding: 20rem 0 20rem;
-  @include mobile { padding: 7rem 0 0 0; background: #f1f1f2;}
-  @include ldesktop { padding: 20rem 0; background: none;}
+  @include mobile { padding: 7rem 0 0 0;}
+  @include ldesktop { padding: 20rem 0;}
   .first-intro {
     .infos { padding-top: 0rem; margin-top: -5rem; position: relative; }
     .img-holder { background: #eff4f4; padding-bottom: 15rem; padding-right:0;
@@ -253,8 +255,8 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 }
 
 .analysis { position: relative; padding: 10rem 0;
-  @include mobile { padding: 7rem 0;}
-  @include ldesktop { padding: 10rem 0;}
+  @include mobile { padding: 7rem 0; background: #f1f1f2;}
+  @include ldesktop { padding: 10rem 0; background: none;}
   .clearfix { position: relative; }
   .infos { left: 57%; top: 17%; position: absolute; z-index: 3;}
   img { z-index: 2; position: relative; }
@@ -265,14 +267,14 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 }
 
 .stock { padding: 20rem 0 20rem;
-  @include mobile { padding: 5rem 0 7rem; background: #f1f1f2;}
-  @include ldesktop { padding: 20rem 0; background: none;}
+  @include mobile { padding: 5rem 0 7rem; }
+  @include ldesktop { padding: 20rem 0; }
   .infos { padding-top: 20rem; }
 }
 
 .space {
-  @include mobile { padding: 5rem 0 8rem;}
-  @include ldesktop { padding: 0;}
+  @include mobile { padding: 5rem 0 8rem; background: #f1f1f2;}
+  @include ldesktop { padding: 0; background: none;}
   .clearfix { padding: 1rem 0 2rem;}
   .img-holder{ padding-left: 0; padding-right:0 ; font-size: 70px; }
   img { display: inline-block; }
@@ -284,8 +286,8 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 }
 
 .growth { padding: 20rem 0 20rem;
-  @include mobile { padding: 4rem 0 8rem; background: #f1f1f2;}
-  @include ldesktop { padding: 20rem 0; background: none;}
+  @include mobile { padding: 4rem 0 8rem; }
+  @include ldesktop { padding: 20rem 0; }
   .item { background: #f6f6f6 url(../img/home/line-vertical.png) repeat-y center center; padding-top: 30rem; position: relative; }
   .img-holder { padding-top: 20rem; position: relative;
     img.center-block { z-index: 2;position: relative; }
@@ -295,8 +297,8 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 }
 
 .charging {
-  @include mobile { padding: 4rem 0 8rem;}
-  @include ldesktop { padding: 0;}
+  @include mobile { padding: 4rem 0 8rem; background: #f1f1f2;}
+  @include ldesktop { padding: 0; background: none; }
   .first-intro {
     .infos { padding-top: 4rem; }
   }
@@ -433,9 +435,17 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 .main-footer { background: #1e1e1e; color: #bbb; padding: 4rem 8rem 3rem 8rem; z-index:4; position: relative;
   @include mobile { padding: 3rem 1rem 3rem 1rem; }
   @include ldesktop { padding: 4rem 8rem 3rem 8rem; }
-  .logo-footer { padding: 3.5rem 0 2rem; }
-  h3 { color: #bbb; font-weight: 600; }
-  h4 { line-height: 1.4; margin-top:0; }
+  .logo-footer { padding: 4.5rem 0 2rem;
+    @include mobile { padding-top: 4.5rem  }
+    @include tablet { padding-top: 3.5rem }
+  }
+  h3 { color: #bbb; font-weight: 600;
+    @include mobile { margin-bottom: 2rem; }
+    small { margin-top: 0.7rem; }
+  }
+  h4 { line-height: 1.4; margin-top:0;
+
+  }
   hr { margin: 3rem 1.5rem;
     @include mobile { margin: 2rem 1.5rem 0.5rem 1.5rem;  }
     @include tablet { margin: 3rem 1.5rem;  }
@@ -444,13 +454,22 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     li { margin-bottom: 0.7rem; }
   }
   p { font-size: 1.5rem; }
+  .item {
+    @include mobile { margin-bottom: 3rem; }
+    @include tablet { margin-bottom: 1.5rem; }
+    h4 { margin-bottom: 0;
+      @include mobile { }
+      @include tablet { margin-bottom: rem; }
+    }
+    p { margin-top:0; }
+  }
 }
 
 .main-content { padding-top: 67px; min-height: 1000px;
   @include mobile { padding-top: 40px; }
   @include desktop { padding-top: 67px; }
 }
-.main-title { background-repeat: no-repeat; background-size: cover; width: 100%; padding: 5rem 1rem; color: #fff;
+.main-title { background-repeat: no-repeat; background-size: cover; background-position: 50% 50% ;width: 100%; padding: 5rem 1rem; color: #fff;
   h1 { margin-top:0; font-weight: 100; font-family: 'SohoGothicPro';
     @include mobile { font-size: 3.5rem; }
     @include tablet { font-size: 4rem; }
