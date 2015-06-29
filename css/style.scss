@@ -79,7 +79,7 @@ body { font-family: 'ProximaNova'; color: $black-color; font-size: 16px; font-si
 .mt10 { margin-top: 10px; } .mt15 { margin-top: 15px; }
 
 a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s ease;-o-transition:All .3s ease;-ms-transition:All .3s ease;
-  &:hover { color: darken($main-color, 10%); outline: 0;}
+  &:hover, &:focus { color: darken($main-color, 10%); outline: 0;}
 }
 .btn { border-radius:0; }
 .bg-overlay { background: rgba(0,0,0,.3); }
@@ -553,6 +553,12 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     @include desktop { padding-top: 5rem; }
     li { display: block; padding: 1rem 0; border-bottom: solid 1px #D8D8D8;
       &:first-child { border-top: solid 1px #D8D8D8; }
+    }
+    ul.dropdown-menu { width: 100%; border-radius: 0; background: #5b5b5b; padding:0; border: none; margin-top: 0;
+      li { border: none; padding:0;}
+      a { color: #fff; padding-top: 1rem; padding-bottom: 1rem;
+        &:hover { background: darken(#5b5b5b,5%); }
+      }
     }
   }
 
