@@ -659,7 +659,7 @@
     </div>
     <div class="clearfix">
       <div class="col-sm-3">
-        <img src="img/logo2.png" alt="" class="logo-footer">
+        <img src="img/logo2.png" alt="" class="logo-footer img-responsive">
       </div>
       <div class="col-sm-9">
         <div class="row">
@@ -686,7 +686,7 @@
   </div>
 
   <!-- loading -->
-  <div class="load-holder" id="div-loading">
+  <div class="load-holder center-all" id="div-loading">
     <div class="square-spin"><div></div></div>
   </div>
 </body>
@@ -698,7 +698,7 @@ $(window).load(function(){
   //loading init
   $('#div-loading').fadeOut(1000);
   //scroll
-  var s = skrollr.init({forceHeight: false});
+
   function winResize() {
     var _win = $( window ).width();
     if (_win < 1280){
@@ -711,6 +711,7 @@ $(window).load(function(){
       // });
     }else{
       // $('#mobile-ver').addClass('hidden');
+      var s = skrollr.init({forceHeight: false});
     }
   }
   winResize();

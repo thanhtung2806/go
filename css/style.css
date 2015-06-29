@@ -80,6 +80,20 @@ a {
     color: #da7d07;
     outline: 0; }
 
+.btn {
+  border-radius: 0; }
+
+.bg-overlay {
+  background: rgba(0, 0, 0, 0.3); }
+
+.btn-orange {
+  background: #f8971c;
+  border-color: transparent;
+  color: #fff; }
+  .btn-orange:hover {
+    background: #da7d07;
+    color: #fff; }
+
 .form-control {
   border: 1px solid #bfd8d8;
   box-shadow: none;
@@ -101,6 +115,19 @@ a {
 @media (min-width: 768px) {
   .text-right {
     text-alight: right; } }
+
+.center-all {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh; }
 
 .navbar-go {
   background-color: white;
@@ -856,7 +883,8 @@ a {
     .sorter-elements {
       background: #6d6e70; } }
   .sorter-elements .container {
-    display: block; }
+    display: block;
+    overflow: hidden; }
   @media (min-width: 768px) {
     .sorter-elements .clearfix {
       display: flex;
@@ -1050,12 +1078,18 @@ a {
       padding-top: 67px; } }
 
 .main-title {
+  background: #FCF7F2;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   width: 100%;
   padding: 5rem 1rem;
   color: #fff; }
+  .main-title.no-image {
+    color: #4A4A4A; }
+  @media (min-width: 992px) {
+    .main-title {
+      min-height: 25rem; } }
   .main-title h1 {
     margin-top: 0;
     font-weight: 100;
@@ -1153,6 +1187,60 @@ a {
       padding-top: 8rem;
       padding-bottom: 2rem; } }
 
+.press {
+  padding: 4rem 0 6rem;
+  color: #4A4A4A; }
+  @media (min-width: 320px) {
+    .press {
+      padding: 2rem 0 4rem; } }
+  @media (min-width: 992px) {
+    .press {
+      padding: 4rem 0 6rem; } }
+  .press .press__content h3 {
+    margin-top: 4rem;
+    font-family: 'SohoGothicPro-Medium';
+    line-height: 1.3; }
+    @media (min-width: 320px) {
+      .press .press__content h3 {
+        margin-top: 2rem; } }
+    @media (min-width: 992px) {
+      .press .press__content h3 {
+        margin-top: 4rem; } }
+  .press .press__sidebar {
+    font-size: 2rem; }
+    @media (min-width: 320px) {
+      .press .press__sidebar {
+        padding-top: 3rem; } }
+    @media (min-width: 768px) {
+      .press .press__sidebar {
+        padding-top: 3rem; } }
+    @media (min-width: 992px) {
+      .press .press__sidebar {
+        padding-top: 5rem; } }
+    .press .press__sidebar li {
+      display: block;
+      padding: 1rem 0;
+      border-bottom: solid 1px #D8D8D8; }
+      .press .press__sidebar li:first-child {
+        border-top: solid 1px #D8D8D8; }
+  .press .press__logo .col-md-6 {
+    margin-top: 3rem;
+    position: relative; }
+    .press .press__logo .col-md-6:hover .bg-overlay {
+      opacity: 1; }
+  .press .press__logo .press__logo__holder {
+    position: relative; }
+  .press .press__logo .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: All .3s ease;
+    -moz-transition: All .3s ease;
+    -o-transition: All .3s ease;
+    -ms-transition: All .3s ease; }
+
 #mobile-ver {
   width: 100%;
   position: fixed;
@@ -1244,18 +1332,15 @@ a {
   top: 0;
   padding: 0;
   margin: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+  height: 100%; }
   .load-holder#div-loading {
     background: #fff; }
 
 .square-spin {
-  -webkit-animation: loaded 0.5s;
-  -moz-animation: loaded 0.5s;
-  -o-animation: loaded 0.5s;
-  animation: loaded 0.5s; }
+  -webkit-animation: loaded 1s;
+  -moz-animation: loaded 1s;
+  -o-animation: loaded 1s;
+  animation: loaded 1s; }
   .square-spin > div {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
@@ -1270,7 +1355,7 @@ a {
   0% {
     opacity: 0; }
 
-  80% {
+  99% {
     opacity: 0; }
 
   100% {
@@ -1280,7 +1365,7 @@ a {
   0% {
     opacity: 0; }
 
-  80% {
+  99% {
     opacity: 0; }
 
   100% {
@@ -1290,7 +1375,7 @@ a {
   0% {
     opacity: 0; }
 
-  80% {
+  99% {
     opacity: 0; }
 
   100% {
@@ -1300,7 +1385,7 @@ a {
   0% {
     opacity: 0; }
 
-  80% {
+  99% {
     opacity: 0; }
 
   100% {

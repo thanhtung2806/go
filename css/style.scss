@@ -44,9 +44,7 @@ $ldesktop-width: 1280px;
 // .bg-white { background: #f5f5f5 }
 // .bg-black { background: #000 }
 
-// .btn-green { background: #4FBBBC; border-color: transparent; color: #fff;
-//   &:hover { background: #3c9c9c; color: #fff;}
-// }
+
 // .btn-white { background: #fff; border-color: #4FBBBC; color: #4FBBBC;
 //   &:hover { background: rgba(79, 187, 188, 0.1); color: #4FBBBC;}
 // }
@@ -64,7 +62,6 @@ body { font-family: 'ProximaNova'; color: $black-color; font-size: 16px; font-si
     @include mobile { background: #fff; }
     @include ldesktop { background: #f6f6f6 url(../img/home/line-vertical.png) repeat-y center center; }
   }
-
 }
 .container {
   @include ldesktop { width: 1280px; }
@@ -84,6 +81,11 @@ body { font-family: 'ProximaNova'; color: $black-color; font-size: 16px; font-si
 a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s ease;-o-transition:All .3s ease;-ms-transition:All .3s ease;
   &:hover { color: darken($main-color, 10%); outline: 0;}
 }
+.btn { border-radius:0; }
+.bg-overlay { background: rgba(0,0,0,.3); }
+.btn-orange { background: $main-color; border-color: transparent; color: #fff;
+  &:hover { background: darken($main-color,10%); color: #fff;}
+}
 .form-control { border: 1px solid #bfd8d8; box-shadow: none; color: #4e5b64; height: 50px;
   &:hover { border: 1px solid #4FBBBC; }
 }
@@ -93,7 +95,7 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 .text-right {
   @include tablet { text-alight: right; }
 }
-
+.center-all { display: -webkit-flex; display: -ms-flexbox;display: flex;-webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; width: 100%; height: 100vh; }
 // header
 .navbar-go { background-color: $white-color; border: none; min-height: 67px; margin-bottom: 0; text-align: center;
   @include mobile { min-height: 40px; }
@@ -396,7 +398,7 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 .sorter-elements {  min-height: 20rem; color: #fff;
   @include mobile { background: #6d6e70 url(../img/home-mobile/conveyorBeltBlack.jpg) repeat-y center;}
   @include tablet { background: #6d6e70; }
-  .container { display: block; }
+  .container { display: block; overflow: hidden; }
   .clearfix {
     @include tablet { display: flex; align-items: center; justify-content: center; min-height: 365px;
       &:first-child { min-height: inherit; }
@@ -486,7 +488,9 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
   @include mobile { padding-top: 40px; }
   @include desktop { padding-top: 67px; }
 }
-.main-title { background-repeat: no-repeat; background-size: cover; background-position: 50% 50% ;width: 100%; padding: 5rem 1rem; color: #fff;
+.main-title { background: #FCF7F2; background-repeat: no-repeat; background-size: cover; background-position: 50% 50% ;width: 100%; padding: 5rem 1rem; color: #fff;
+  &.no-image { color: #4A4A4A; }
+  @include desktop { min-height: 25rem; }
   h1 { margin-top:0; font-weight: 100; font-family: 'SohoGothicPro';
     @include mobile { font-size: 3.5rem; }
     @include tablet { font-size: 4rem; }
@@ -532,6 +536,37 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     @include desktop { padding-top: 8rem; padding-bottom: 2rem; }
   }
 }
+
+
+.press { padding: 4rem 0 6rem; color: #4A4A4A;
+  @include mobile { padding: 2rem 0 4rem; }
+  @include desktop { padding: 4rem 0 6rem; }
+  .press__content {
+    h3 { margin-top: 4rem; font-family: 'SohoGothicPro-Medium'; line-height: 1.3;
+      @include mobile { margin-top: 2rem; }
+    @include desktop { margin-top: 4rem; }
+    }
+  }
+  .press__sidebar { font-size: 2rem;
+    @include mobile { padding-top: 3rem; }
+    @include tablet { padding-top: 3rem; }
+    @include desktop { padding-top: 5rem; }
+    li { display: block; padding: 1rem 0; border-bottom: solid 1px #D8D8D8;
+      &:first-child { border-top: solid 1px #D8D8D8; }
+    }
+  }
+
+  .press__logo {
+    .col-md-6 { margin-top: 3rem; position: relative;
+      &:hover {
+        .bg-overlay { opacity: 1;  }
+      }
+    }
+    .press__logo__holder { position: relative; }
+    .bg-overlay { position: absolute; top:0; left:0; height: 100%; opacity: 0; -webkit-transition:All .3s ease;-moz-transition:All .3s ease;-o-transition:All .3s ease;-ms-transition:All .3s ease;}
+  }
+}
+
 
 #mobile-ver { width: 100%; position: fixed; z-index: 1200; left: 0; top:0;padding:0;margin:0;height:100%; background: #fff; padding: 15rem 0;}
 
@@ -596,15 +631,14 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 .carousel.fade .item.active{opacity:1;-moz-transition:opacity ease-in-out .7s;-o-transition:opacity ease-in-out .7s;-webkit-transition:opacity ease-in-out .7s;transition:opacity ease-in-out .7s;z-index:2}
 
 //loading
-.load-holder { width: 100%; position: fixed; z-index: 1300; left: 0; top:0;padding:0;margin:0;height:100%; display: flex; align-items: center; justify-content: center;
-
-  &#div-loading { background:#fff;  }
+.load-holder { width: 100%; position: fixed; z-index: 1300; left: 0; top:0;padding:0;margin:0;height:100%;
+  &#div-loading { background:#fff; }
 }
 .square-spin {
-  -webkit-animation: loaded .5s ;
-  -moz-animation:    loaded .5s ;
-  -o-animation:      loaded .5s ;
-  animation:         loaded .5s ;
+  -webkit-animation: loaded 1s ;
+  -moz-animation:    loaded 1s ;
+  -o-animation:      loaded 1s ;
+  animation:         loaded 1s ;
   > div { -webkit-animation-fill-mode: both; animation-fill-mode: both;
   width: 50px; height: 50px; background: #F8971C; border: 1px solid lighten(#F8971C, 5%);
   -webkit-animation: square-spin 3s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite;
@@ -612,22 +646,22 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 }
 @-webkit-keyframes loaded {
   0%   { opacity: 0; }
-  80%  { opacity: 0; }
+  99%  { opacity: 0; }
   100% { opacity: 1; }
 }
 @-moz-keyframes loaded {
   0%   { opacity: 0; }
-  80%  { opacity: 0; }
+  99%  { opacity: 0; }
   100% { opacity: 1; }
 }
 @-o-keyframes loaded {
   0%   { opacity: 0; }
-  80%  { opacity: 0; }
+  99%  { opacity: 0; }
   100% { opacity: 1; }
 }
 @keyframes loaded {
   0%   { opacity: 0; }
-  80%  { opacity: 0; }
+  99%  { opacity: 0; }
   100% { opacity: 1; }
 }
 @-webkit-keyframes square-spin {
