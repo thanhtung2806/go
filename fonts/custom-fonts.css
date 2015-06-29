@@ -27,6 +27,18 @@
 }
 
 @font-face {
+  font-family: 'SohoGothicPro';
+  src: url('soho-gothic-pro/SohoGothicPro-Bold.eot');
+  src: url('soho-gothic-pro/SohoGothicPro-Bold.eot?#iefix') format('embedded-opentype'),
+       url('soho-gothic-pro/SohoGothicPro-Bold.woff2') format('woff2'),
+       url('soho-gothic-pro/SohoGothicPro-Bold.woff') format('woff'),
+       url('soho-gothic-pro/SohoGothicPro-Bold.ttf') format('truetype'),
+       url('soho-gothic-pro/SohoGothicPro-Bold.svg#SohoGothicPro-Bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'SohoGothicPro-Medium';
   src: url('soho-gothic-pro/SohoGothicPro-Medium.eot');
   src: url('soho-gothic-pro/SohoGothicPro-Medium.eot?#iefix') format('embedded-opentype'),
