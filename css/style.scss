@@ -714,7 +714,7 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
       @include mobile { font-size: 2rem; }
       @include tablet { font-size: 3rem; }
     }
-    a:hover, a:focus { text-decoration: none; }
+    a:hover, a:focus { text-decoration: none; color: #231F20; cursor: default; }
   }
   .panel-body {
     ul {
@@ -727,9 +727,10 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
     @include mobile { background-size: 50%; }
     @include tablet { background-size: auto; }
   }
+  .panel-collapse { display: none!important }
 
 }
-.arrow { background: url(../img/butler/arrow.png) no-repeat; width: 32px; height: 17px; display: inline-block;
+.arrow { background: url(../img/butler/arrow.png) no-repeat; width: 32px; height: 17px; display: none;
   &.arrow--up { background: url(../img/butler/arrow--up.png) no-repeat; }
 }
 .product__features { background: #fafafa; padding: 4rem 0 ;

@@ -1542,7 +1542,9 @@ a {
     .product__components .panel-title .h2 {
       font-size: 3rem; } }
   .product__components .panel-title a:hover, .product__components .panel-title a:focus {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #231F20;
+    cursor: default; }
 .product__components .panel-body ul strong {
   color: #594f51; }
 .product__components .panel-group {
@@ -1555,12 +1557,14 @@ a {
 @media (min-width: 768px) {
   .product__components .arrow {
     background-size: auto; } }
+.product__components .panel-collapse {
+  display: none !important; }
 
 .arrow {
   background: url(../img/butler/arrow.png) no-repeat;
   width: 32px;
   height: 17px;
-  display: inline-block; }
+  display: none; }
   .arrow.arrow--up {
     background: url(../img/butler/arrow--up.png) no-repeat; }
 
