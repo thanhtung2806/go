@@ -62,6 +62,7 @@ body { font-family: 'ProximaNova'; color: $black-color; font-size: 16px; font-si
     @include mobile { background: #fff; }
     @include ldesktop { background: #f6f6f6 url(../img/home/line-vertical.png) repeat-y center center; }
   }
+  .press { padding: 0; }
 }
 .container {
   @include ldesktop { width: 1280px; }
@@ -96,7 +97,9 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 .text-right {
   @include tablet { text-alight: right; }
 }
-.center-all { display: -webkit-flex; display: -ms-flexbox;display: flex;-webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; width: 100%; height: 100vh; }
+.center-all { display: -webkit-flex; display: -ms-flexbox;display: flex;-webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; width: 100%;
+ // height: 100vh;
+}
 // header
 .navbar-go { background-color: $white-color; border: none; min-height: 67px; margin-bottom: 0; text-align: center;
   @include mobile { min-height: 40px; }
@@ -631,6 +634,44 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
         &:hover, &:focus { outline: 0;; }
       }
       .inline-upload:before { content: 'Attach Resume/CV'; text-align: center; display: inline-block; background: #FFF; border: 1px solid #FF9D38; padding: 8px 12px 9px 12px; outline: none; white-space: nowrap; -webkit-user-select: none; cursor: pointer; text-shadow: 1px 1px #fff; color: #FF9D38; cursor: pointer; width: 200px; }
+    }
+  }
+}
+
+.story {
+  .story__header { font-size: 4rem; font-family: 'SohoGothicPro'; background: #F1F1F2; padding: 2rem 0; font-weight: 100;
+    strong { font-size: 4.5rem; font-weight: 700; }
+  }
+  .story__content {
+    @include mobile { padding: 3rem 0 6rem; }
+    @include desktop { padding: 8rem 0 10rem; }
+    .story__content__number {
+      @include mobile { margin: 2rem 0; }
+      @include desktop { margin: 4rem 0; }
+      .orange { font-size: 7rem; font-weight: 100; font-family: 'SohoGothicPro';}
+      h4 { font-weigth: 100; font-family: 'SohoGothicPro'; margin-top: 1rem; color: lighten(#231F20, 30%);}
+      h5 { color: lighten(#231F20, 40%); }
+    }
+    .story__content__item {
+      .story__content__item__holder { margin-bottom: 2rem;
+        @include mobile { height: auto; }
+        @include tablet { height: 241px; }
+      }
+    }
+    .img-team-2 { margin-bottom: 4rem; }
+    .story__content__list {
+      @include mobile { padding: 2rem 0; }
+      @include tablet { padding: 7rem 0; }
+      .story__content__number {
+        .orange { line-height: 1.1; }
+        h4 { margin:0; padding:0 }
+      }
+    }
+    .story__content__logo { padding: 3rem 0 0;
+      a { display: inline-block;
+        @include mobile { margin: 2rem 2rem;  }
+        @include tablet { margin: 2rem 4rem;  }
+      }
     }
   }
 }
