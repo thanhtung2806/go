@@ -374,14 +374,14 @@ a { color: $main-color; -webkit-transition:All .3s ease;-moz-transition:All .3s 
 .motor-bot { bottom: 0; }
 .motor-top { top: 0; }
 .intro-sorter { background: #f6f6f6 url(../img/home/conveyorBeltBlack.png) repeat-y center center;
-  @include mobile { background: #6d6e70; color: #fff;padding: 5rem 0 7rem; }
+  @include mobile { background: #6d6e70; color: #fff;padding: 5rem 0 0rem; }
   @include ldesktop { background: #f6f6f6 url(../img/home/conveyorBeltBlack.png) repeat-y center center; color: #333; }
-  .infos { position: relative; padding: 30rem 0 15rem; z-index:2;
+  .infos { position: relative; padding: 30rem 0 22rem; z-index:2;
     &:after{content:"";display:block;position:absolute;bottom:0;left:0;width:100%;height:100%;pointer-events:none;background-color:rgba(255,255,255,0.15) ;
     background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.71) 51%, #ffffff 100%);
     background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.71) 51%, #ffffff 100%);
     background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.71) 51%, #ffffff 100%);
-    opacity:.9;z-index:1;background-blend-mode:multiply}
+    opacity:.9;z-index:1;background-blend-mode:multiply;}
   }
   .holder { z-index:2; }
   h1 { font-family: 'SohoGothicPro'; font-size: 7rem; font-weight: 100; text-transform: uppercase;

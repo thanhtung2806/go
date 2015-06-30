@@ -794,14 +794,14 @@ a {
     .intro-sorter {
       background: #6d6e70;
       color: #fff;
-      padding: 5rem 0 7rem; } }
+      padding: 5rem 0 0rem; } }
   @media (min-width: 1280px) {
     .intro-sorter {
       background: #f6f6f6 url(../img/home/conveyorBeltBlack.png) repeat-y center center;
       color: #333; } }
   .intro-sorter .infos {
     position: relative;
-    padding: 30rem 0 15rem;
+    padding: 30rem 0 22rem;
     z-index: 2; }
     .intro-sorter .infos:after {
       content: "";
