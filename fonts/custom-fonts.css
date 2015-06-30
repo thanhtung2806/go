@@ -39,14 +39,14 @@
 }
 
 @font-face {
-  font-family: 'SohoGothicPro-Medium';
+  font-family: 'SohoGothicPro';
   src: url('soho-gothic-pro/SohoGothicPro-Medium.eot');
   src: url('soho-gothic-pro/SohoGothicPro-Medium.eot?#iefix') format('embedded-opentype'),
        url('soho-gothic-pro/SohoGothicPro-Medium.woff2') format('woff2'),
        url('soho-gothic-pro/SohoGothicPro-Medium.woff') format('woff'),
        url('soho-gothic-pro/SohoGothicPro-Medium.ttf') format('truetype'),
        url('soho-gothic-pro/SohoGothicPro-Medium.svg#SohoGothicPro-Medium') format('svg');
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
 }
 
